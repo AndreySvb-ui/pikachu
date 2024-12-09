@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pikachu Square Path</title>
+  <style>
+    /* Основные стили */
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffffff; /* Белый фон */
+    }
+
+    .scene {
+      position: relative;
+      width: 400px; /* Размер области */
+      height: 400px; /* Размер области */
+    }
+
+    .pikachu {
+      position: absolute;
+      width: 100px;
+      animation: moveInSquare 5s linear infinite, spin 2s linear infinite; /* Движение по квадрату + вращение */
+    }
+
+    /* Анимация движения по квадрату */
+    @keyframes moveInSquare {
+      0% {
+        top: 0;
+        left: 0;
+      }
+      25% {
+        top: 0;
+        left: 300px; /* Движение вправо */
+      }
+      50% {
+        top: 300px; /* Движение вниз */
+        left: 300px;
+      }
+      75% {
+        top: 300px;
+        left: 0; /* Движение влево */
+      }
+      100% {
+        top: 0; /* Возврат наверх */
+        left: 0;
+      }
+    }
+
+    /* Анимация вращения вокруг своей оси */
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="pikachu">
+      <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif" alt="Pikachu">
+    </div>
+  </div>
+</body>
+</html>
